@@ -1,0 +1,74 @@
+<h2>Angular Pipes</h2>
+
+<h3>Text</h3>
+<div>
+  <div style="padding-top: 20px">
+    To Uppercase:
+    <p>{{ myText | uppercase }}</p>
+  </div>
+
+  <div style="padding-top: 20px">
+    To Lowercase:
+    <p>
+      {{ myText | lowercase }}
+    </p>
+  </div>
+</div>
+
+<br>
+
+<h3>Currency</h3>
+<div>
+  <div style="padding-top: 20px">
+    In Dollars:
+    <p>{{ myNumber | currency:'USD' }}</p>
+  </div>
+
+  <div style="padding-top: 20px">
+    In rupees:
+    <p>
+      {{ myNumber | currency:'INR' }}
+    </p>
+  </div>
+
+  <div style="padding-top: 20px">
+    In Kenya Shillings:
+    <p>
+      {{ myNumber | currency:'KES ' }}
+    </p>
+  </div>
+</div>
+
+<br>
+
+<h3>Dates</h3>
+<div>
+  <div style="padding-top: 20px">
+    Format - CustomDate - M/d/yy, h:mm a:
+    <p>{{ myDate | customDate: 'M/d/yy, h:mm a' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - CustomDate - MMM d, y, h:mm:ss a:
+    <p>{{ myDate | customDate: 'MMM d, y, h:mm:ss a' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - CustomDate - MMMM d, y, h:mm:ss a z:
+    <p>{{ myDate | customDate: 'MMMM d, y, h:mm:ss a z' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - CustomDate - EEEE, MMMM d, y, h:mm:ss a zzzz:
+    <p>{{ myDate | customDate: 'EEEE, MMMM d, y, h:mm:ss a zzzz' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - CustomDate - M/d/yy:
+    <p>{{ myDate | customDate: 'M/d/yy' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - CustomDate - h:mm:ss a:
+    <p>{{ myDate | customDate: 'h:mm:ss a' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - CustomDate - h:mm:ss a zzzz:
+    <p>{{ myDate | customDate: 'h:mm:ss a zzzz' }}</p>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<h2>Angular Pipes</h2>
+
+<h3>Text</h3>
+<div>
+  <div style="padding-top: 20px">
+    To Uppercase:
+    <p>{{ myText | uppercase }}</p>
+  </div>
+
+  <div style="padding-top: 20px">
+    To Lowercase:
+    <p>
+      {{ myText | lowercase }}
+    </p>
+  </div>
+</div>
+
+<br>
+
+<h3>Currency</h3>
+<div>
+  <div style="padding-top: 20px">
+    In Dollars:
+    <p>{{ myNumber | currency:'USD' }}</p>
+  </div>
+
+  <div style="padding-top: 20px">
+    In rupees:
+    <p>
+      {{ myNumber | currency:'INR' }}
+    </p>
+  </div>
+
+  <div style="padding-top: 20px">
+    In Kenya Shillings:
+    <p>
+      {{ myNumber | currency:'KES ' }}
+    </p>
+  </div>
+</div>
+
+<br>
+
+<h3>Dates</h3>
+<div>
+  <div style="padding-top: 20px">
+    Format - short:
+    <p>{{ myDate | date: 'short' }}</p>
+    Format - M/d/yy, h:mm a:
+    <p>{{ myDate | date: 'M/d/yy, h:mm a' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - medium:
+    <p>{{ myDate | date: 'medium' }}</p>
+    Format - MMM d, y, h:mm:ss a:
+    <p>{{ myDate | date: 'MMM d, y, h:mm:ss a' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - long:
+    <p>{{ myDate | date: 'long' }}</p>
+    Format - MMMM d, y, h:mm:ss a z:
+    <p>{{ myDate | date: 'MMMM d, y, h:mm:ss a z' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - full:
+    <p>{{ myDate | date: 'full' }}</p>
+    Format - EEEE, MMMM d, y, h:mm:ss a zzzz:
+    <p>{{ myDate | date: 'EEEE, MMMM d, y, h:mm:ss a zzzz' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - shortDate:
+    <p>{{ myDate | date: 'shortDate' }}</p>
+    Format - M/d/yy:
+    <p>{{ myDate | date: 'M/d/yy' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - mediumTime:
+    <p>{{ myDate | date: 'mediumTime' }}</p>
+    Format - h:mm:ss a:
+    <p>{{ myDate | date: 'h:mm:ss a' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - fullTime:
+    <p>{{ myDate | date: 'fullTime' }}</p>
+    Format - h:mm:ss a zzzz:
+    <p>{{ myDate | date: 'h:mm:ss a zzzz' }}</p>
+  </div>
+</div>
