@@ -19,9 +19,19 @@ export class CustomDatePipe implements PipeTransform {
     
     // Checking the format is valid or not
     if (this.isFormatValid(value, format)) {
-      finalValue = momenttz(value).tz(timezone).format(format);
+      if (timezone) {
+        
+        finalValue = momenttz(value).tz(timezone).format(format);
+      }else {
+
+        finalValue = momenttz(value).format(format);
+      }
     } else {
+      if (timezone) {
       finalValue = momenttz(value).tz(timezone).format('DD MMM, YYYY');
+      } else {
+      finalValue = momenttz(value).format('DD MMM, YYYY');
+      }
     }
 
     return finalValue;

@@ -45,34 +45,38 @@
 <div>
   <div style="padding-top: 20px">
     Format - CustomDate - Testing:
-    <p>{{ myDate | customDate: {timezone: 'America/Los_Angeles'} }}</p>
+    <p>{{ myDate | customDate: 'fullDate' : 'America/Los_Angeles' }}</p>
   </div>
-  <!-- <div style="padding-top: 20px">
+  <div style="padding-top: 20px">
     Format - CustomDate - M/d/yy, h:mm a:
-    <p>{{ myDate | customDate: 'M/d/yy, h:mm a' }}</p>
+    <p>{{ myDate | customDate: 'M/D/YY, h:mm A' }}</p>
+  </div>
+  <div style="padding-top: 20px">
+    Format - CustomDate - M/d/yy, h:mm a:
+    <p>{{ myDate | customDate: 'M/D/YY, h:mm A' }}</p>
   </div>
   <div style="padding-top: 20px">
     Format - CustomDate - MMM d, y, h:mm:ss a:
-    <p>{{ myDate | customDate: 'MMM d, y, h:mm:ss a' }}</p>
+    <p>{{ myDate | customDate: 'MMM D, YYYY, H:mm:ss A' }}</p>
   </div>
   <div style="padding-top: 20px">
     Format - CustomDate - MMMM d, y, h:mm:ss a z:
-    <p>{{ myDate | customDate: 'MMMM d, y, h:mm:ss a z' }}</p>
+    <p>{{ myDate | customDate: 'MMMM D, YYYY, H:mm:ss A Z' }}</p>
   </div>
   <div style="padding-top: 20px">
     Format - CustomDate - EEEE, MMMM d, y, h:mm:ss a zzzz:
-    <p>{{ myDate | customDate: 'EEEE, MMMM d, y, h:mm:ss a zzzz' }}</p>
+    <p>{{ myDate | customDate: 'EEEE, MMMM D, YYYY, H:mm:ss A Z' }}</p>
   </div>
   <div style="padding-top: 20px">
     Format - CustomDate - M/d/yy:
-    <p>{{ myDate | customDate: 'M/d/yy' }}</p>
+    <p>{{ myDate | customDate: 'M/D/YY' }}</p>
   </div>
   <div style="padding-top: 20px">
     Format - CustomDate - h:mm:ss a:
-    <p>{{ myDate | customDate: 'h:mm:ss a' }}</p>
+    <p>{{ myDate | customDate: 'H:mm:ss A' }}</p>
   </div>
   <div style="padding-top: 20px">
     Format - CustomDate - h:mm:ss a zzzz:
-    <p>{{ myDate | customDate: 'h:mm:ss a zzzz' }}</p>
-  </div> -->
+    <p>{{ myDate | customDate: 'H:mm:ss A Z' }}</p>
+  </div>
 </div>

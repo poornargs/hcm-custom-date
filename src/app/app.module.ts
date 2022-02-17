@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CustomComponent } from './custom/custom.component';
 import { CustomDatePipe } from './custom-date.pipe';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CustomComponent,
-    CustomDatePipe
+    CustomDatePipe,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

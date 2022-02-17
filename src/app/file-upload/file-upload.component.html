@@ -1,0 +1,205 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2><u>Local</u></h2>
+      <h3>Choose File - Image</h3>
+      <div class="form-group">
+        <input
+          type="file"
+          class="form-control"
+          name="docFile"
+          (change)="fileProgress($event)"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- <button class="btn btn-primary" (click)="loadLocal()">Load</button> -->
+        <button class="btn btn-primary" (click)="clearLocal()">Clear</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2><u>Live</u></h2>
+      <h3>Enter Url</h3>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="previewLiveUrl"
+          name="liveurl"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          Live Urls
+        </button>
+        <button class="btn btn-primary" (click)="clearLive()">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <br /><br />
+  <hr />
+  <br />
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Docx-preview - Local</h3>
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="loadLocal()"
+        data-toggle="modal"
+        data-target="#localPreview"
+      >
+        Preview
+      </button>
+    </div>
+    <div class="col-md-6">
+      <h3>Docx-preview - Live Url</h3>
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="loadLive()"
+        data-toggle="modal"
+        data-target="#livePreview"
+      >
+        Preview
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-max-height" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Live Existing Urls</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 10%;">#</th>
+              <th style="width: 60%;">Url</th>
+              <th style="width: 10%;">isToken</th>
+              <th style="width: 10%;">isHcm</th>
+              <th style="width: 10%;">Copy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of urls; let i = index">
+              <td style="width: 10%;">{{ i + 1 }}</td>
+              <td style="width: 60%;">{{ item.url }}</td>
+              <td style="width: 10%;">{{ item.isToken }}</td>
+              <td style="width: 10%;">{{ item.isHcm }}</td>
+              <td
+                style="cursor: pointer; color: blue; width: 10%;"
+                (click)="previewLiveUrl = item.url"
+              >
+                <u>Copy</u>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="localPreview"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="localPreviewLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-max-height" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="localPreviewLabel">
+          Local Document Preview
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="container-docx-22"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="livePreview"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="livePreviewLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-max-height" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="livePreviewLabel">Live Document Preview</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="container-docx-33"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
